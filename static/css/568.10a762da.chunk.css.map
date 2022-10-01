@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/568.10a762da.chunk.css","mappings":"AAAA,UACI,WAEJ,uBACI,mBACA","sources":["pages/expances/expances.scss"],"sourcesContent":[".expances{\r\n    width: 100%;\r\n}\r\n.ant-table-thead > tr > th {\r\n    background: #78bc43;\r\n    color: #fff;\r\n}"],"names":[],"sourceRoot":""}

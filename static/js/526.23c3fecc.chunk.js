@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkenniyal_riot=self.webpackChunkenniyal_riot||[]).push([[526],{2526:function(n,e,i){i.r(e);var r=i(184);e.default=function(){return(0,r.jsx)("div",{children:"Login"})}}}]);
+//# sourceMappingURL=526.23c3fecc.chunk.js.map

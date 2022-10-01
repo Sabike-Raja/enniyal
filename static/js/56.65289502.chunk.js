@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkenniyal_riot=self.webpackChunkenniyal_riot||[]).push([[56],{8056:function(n,e,i){i.r(e);var r=i(184);e.default=function(){return(0,r.jsx)("div",{children:"Dashboard"})}}}]);
+//# sourceMappingURL=56.65289502.chunk.js.map
