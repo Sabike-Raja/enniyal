@@ -1,5 +1,5 @@
 {
-  "hompage": "http://sabike-raja.github.io/enniyal",
+  "homepage": "https://Sabike-Raja.github.io/enniyal",
   "name": "enniyal-riot",
   "version": "0.1.0",
   "private": true,
@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run deploy",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
