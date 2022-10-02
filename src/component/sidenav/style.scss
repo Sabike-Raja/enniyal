@@ -1,0 +1,155 @@
+.mainside {
+  height: 100vh;
+  background-color: #78ba43;
+}
+
+.ant-menu {
+  background: #78ba43;
+  width: 213px;
+}
+
+.ant-menu-item a {
+  color: #fff;
+}
+
+.ant-menu-sub.ant-menu-inline {
+  background: #78ba43;
+}
+
+.ant-menu-inline,
+.ant-menu-vertical,
+.ant-menu-vertical-left {
+  border-right: 0px solid;
+}
+
+.mainside .ant-btn {
+  width: 100%;
+}
+
+.ant-btn-primary:focus,
+.ant-btn-primary:hover {
+  color: #fff;
+  border-color: #78bc43;
+  background: #78bc43;
+}
+
+.ant-btn-primary {
+  color: #fff;
+  border-color: #78bc43;
+  background: #78bc43;
+}
+
+.ant-menu-submenu-popup > .ant-menu {
+  background-color: #398200;
+  margin-left: -4px;
+}
+
+.ant-menu-submenu > .ant-menu {
+  border-radius: 2px;
+}
+
+.ant-menu-item:hover a {
+  color: #fff;
+}
+
+.ant-tooltip-placement-right,
+.ant-tooltip-placement-rightBottom,
+.ant-tooltip-placement-rightTop {
+  padding-left: 0;
+}
+
+.ant-tooltip-arrow {
+  width: 0;
+  height: 0;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #398200;
+  // #e6f7ff
+}
+
+.ant-menu-submenu-open {
+  background: #398200;
+}
+
+.ant-tooltip-inner {
+  background: #398200;
+  margin-left: -4px;
+}
+
+.ant-menu-submenu-arrow,
+.ant-menu-submenu-expand-icon {
+  color: #fff;
+}
+
+.ant-menu-inline .ant-menu-item,
+.ant-menu-inline .ant-menu-submenu-title {
+  width: 100%;
+}
+
+.ant-menu-inline.ant-menu-root .ant-menu-item > .ant-menu-title-content,
+.ant-menu-inline.ant-menu-root
+  .ant-menu-submenu-title
+  > .ant-menu-title-content {
+  color: #fff;
+}
+
+.ant-menu-submenu-selected {
+  color: #fff;
+}
+
+.ant-menu-submenu-active {
+  background: #398200;
+}
+
+.ant-menu-item-active {
+  background: #398200;
+  font-size: 16px;
+}
+
+.ant-menu-item-active.ant-menu-submenu-arrow {
+  color: #fff;
+}
+
+.ant-menu-light .ant-menu-item-active,
+.ant-menu-light .ant-menu-item:hover {
+  color: #fff;
+}
+.ant-menu-item-active:focus {
+  background-color: #000000 !important;
+}
+
+.ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow,
+.ant-menu-submenu:hover
+  > .ant-menu-submenu-title
+  > .ant-menu-submenu-expand-icon {
+  color: #fff;
+}
+
+.ant-menu-item:active,
+.ant-menu-submenu-title:active {
+  background: #398200;
+}
+
+.ant-menu-item:hover {
+  color: #398200;
+}
+
+.mainside i {
+  color: #fff;
+}
+
+.bodytable {
+  width: 100%;
+  padding: 0 2px;
+  background: #edebec;
+}
+.bodytable .ant-table-thead > tr > th {
+  background: #78bc43;
+  color: #fff;
+}
+
+.page-name {
+  background: #fff;
+  padding: 5px 10px;
+}

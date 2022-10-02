@@ -1,18 +1,20 @@
 import {
   AppstoreOutlined,
-  ContainerOutlined,
+  UserOutlined,
   DesktopOutlined,
   MailOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   HomeOutlined,
-  PieChartOutlined,
+  FileOutlined,
+  SettingOutlined,
 } from "@ant-design/icons";
 import { Button, Menu } from "antd";
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import AppRoutes from 'constant/appRoutes'
+import AppRoutes from "constant/appRoutes";
+import "./style.scss";
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -25,45 +27,104 @@ function getItem(label, key, icon, children, type) {
 }
 
 const items = [
-  getItem( <Link to={AppRoutes.dashboard}>Dashboard</Link>, "Dashboard", <HomeOutlined />),
-  getItem("Invoice", "Invoice", <MailOutlined />, [
-    getItem("Option 1", "1"),
-    getItem("Option 2", "2"),
-    getItem("Option 3", "3"),
-  ]),
+  getItem(
+    <Link to={AppRoutes.dashboard}>Dashboard</Link>,
+    "Dashboard",
+    <i className="riot-icon riot-icon-menu" />
+  ),
+  getItem(
+    "Invoice",
+    "Invoice",
+    <i className="riot-icon riot-icon-invoices" />,
+    [
+      getItem(
+        <Link to={AppRoutes.createproformainvoice}>
+          Create Proforma Invoice
+        </Link>,
+        "CreateProformaInvoice"
+      ),
+      getItem(
+        <Link to={AppRoutes.createpayinvoice}>Create Pay Invoice</Link>,
+        "CreatePayInvoice"
+      ),
+      getItem(
+        <Link to={AppRoutes.viewproformainvoice}>View Proforma Invoice</Link>,
+        "ViewProformaInvoice"
+      ),
+      getItem(
+        <Link to={AppRoutes.viewpayinvoice}>View Pay Invoice</Link>,
+        "ViewPayInvoice"
+      ),
+      getItem(
+        <Link to={AppRoutes.viewinvoice}>View Invoice</Link>,
+        "ViewInvoice"
+      ),
+    ]
+  ),
 
-  getItem("Address", "Address", <MailOutlined />, [
-    getItem("Option 4", "5"),
-    getItem("Option 5", "6"),
-    getItem("Option 6", "7"),
-    getItem("Option 7", "8"),
-  ]),
+  getItem(
+    "Address",
+    "Address",
+    <i className="riot-icon riot-icon-location" />,
+    [
+      getItem(<Link to={AppRoutes.client}>Client</Link>, "Client"),
+      getItem(<Link to={AppRoutes.vendor}>Vendor</Link>, "Vendors"),
+    ]
+  ),
 
-  getItem("Employee", "Employee", <MailOutlined />, [
-    getItem("Option 8", "4"),
-    getItem("Option 9", "9"),
-    getItem("Option 10", "10"),
-    getItem("Option 11", "11"),
-  ]),
+  getItem(
+    "Employee",
+    "Employee",
+    <i className="riot-icon riot-icon-employee" />,
+    [
+      getItem(
+        <Link to={AppRoutes.viewemployee}>Viewemployee</Link>,
+        "Viewemployee"
+      ),
+      getItem(
+        <Link to={AppRoutes.designation}>Designation</Link>,
+        "Designation"
+      ),
+      getItem(<Link to={AppRoutes.employeeid}>Employeeid</Link>, "Employeeid"),
+    ]
+  ),
 
-  getItem(<Link to={AppRoutes.expancess}>Expancess</Link>, "Expancess", <DesktopOutlined />),
+  getItem(
+    <Link to={AppRoutes.expancess}>Expancess</Link>,
+    "Expancess",
+    <i className="riot-icon riot-icon-expencess" />
+  ),
 
-  getItem(<Link to={AppRoutes.expancess}>Pay Slip</Link>, "Pay Slip", <DesktopOutlined />),
-  getItem("Attandance", "sub4", <MailOutlined />, [
-    getItem("Option 12", "12"),
-    getItem("Option 13", "13"),
-    getItem("Option 14", "14"),
-    getItem("Option 15", "15"),
-  ]),
-  // getItem("Navigation Two", "sub2", <AppstoreOutlined />, [
-  //   getItem("Option 9", "9"),
-  //   getItem("Option 10", "10"),
-  //   getItem("Submenu", "sub3", null, [
-  //     getItem("Option 11", "11"),
-  //     getItem("Option 12", "12"),
-  //   ]),
-  // ]),
-  getItem(<Link to={AppRoutes.expancess}>Settings</Link>, "Settings", <DesktopOutlined />),
+  getItem(
+    <Link to={AppRoutes.payslip}>Pay Slip</Link>,
+    "PaySlip",
+    <i className="riot-icon riot-icon-expencess" />
+  ),
+  getItem(
+    "Attandance",
+    "Attandance",
+    <i className="riot-icon riot-icon-attantance" />,
+    [
+      getItem(
+        <Link to={AppRoutes.viewattadance}>View Attandance</Link>,
+        "ViewAttandance"
+      ),
+      getItem(
+        <Link to={AppRoutes.takeattadance}>Take Attandance</Link>,
+        "TakeAttandance"
+      ),
+    ]
+  ),
+  getItem(
+    <Link to={AppRoutes.settings}>Settings</Link>,
+    "Settings",
+    <i className="riot-icon riot-icon-setting" />
+  ),
+  getItem(
+    <Link to={AppRoutes.profile}>Profile</Link>,
+    "Profile",
+    <SettingOutlined />
+  ),
 ];
 
 const SideNav = () => {
@@ -74,7 +135,7 @@ const SideNav = () => {
   };
 
   return (
-    <div>
+    <div className="mainside">
       <Button
         type="primary"
         onClick={toggleCollapsed}
@@ -85,16 +146,15 @@ const SideNav = () => {
         {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
       </Button>
       <Menu
-        defaultSelectedKeys={["1"]}
-        defaultOpenKeys={["sub1"]}
+        defaultSelectedKeys={[""]}
+        defaultOpenKeys={[""]}
         mode="inline"
-        theme="dark"
+        theme="light"
         inlineCollapsed={collapsed}
         items={items}
-      >
-        </Menu>
+      ></Menu>
     </div>
   );
 };
 
-export default SideNav
+export default SideNav;

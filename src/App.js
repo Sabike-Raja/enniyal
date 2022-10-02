@@ -6,6 +6,7 @@ import Loader from 'component/loader';
 import "./App.scss";
 // import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import 'antd/dist/antd.min.css';
+import './styles/riot-font.css'
 
 
 const Home = lazy(() => import("pages/home"));

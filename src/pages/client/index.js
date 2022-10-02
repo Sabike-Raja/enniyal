@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Space, Table } from "antd";
+import Button from "antd/lib/button";
 import { DatePicker } from "antd";
 import Modal from "antd/lib/modal";
-import "./expances.scss";
-import Topbar from "component/topbar";
 
-const Expances = () => {
+const Client = () => {
   const columns = [
     {
       title: "S.no",
@@ -13,58 +12,46 @@ const Expances = () => {
       key: "s_no",
     },
     {
-      title: "Title/Invoice",
-      dataIndex: "title",
-      key: "title",
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
     },
     {
-      title: "Date",
-      dataIndex: "date",
-      key: "date",
+      title: "Company Name",
+      dataIndex: "company_name",
+      key: "company_name",
     },
     {
-      title: "Pay To",
-      key: "pay_to",
-      dataIndex: "pay_to",
-    },
-
-    {
-      title: "Pay For",
-      dataIndex: "pay_for",
-      key: "pay_for",
+      title: "Contact No",
+      dataIndex: "contact_no",
+      key: "contact_no",
     },
     {
-      title: "Mode",
-      dataIndex: "mode",
-      key: "mode",
+      title: "GST No",
+      dataIndex: "gst_no",
+      key: "gst_no",
     },
     {
-      title: "Amount",
-      dataIndex: "amount",
-      key: "amount",
+      title: "Mail ID",
+      dataIndex: "mail_id",
+      key: "mail_id",
     },
     {
-      title: "Last Payment",
-      dataIndex: "last_payment",
-      key: "last_payment",
+      title: "Address",
+      dataIndex: "address",
+      key: "address",
     },
     {
-      title: "Pending Payment",
-      dataIndex: "pending_payment",
-      key: "pending_payment",
-    },
-    {
-      title: "Status",
-      dataIndex: "status",
-      key: "status",
-      render: (text) => <a>{text}</a>,
+      title: "Postal Code",
+      dataIndex: "postal_code",
+      key: "postal_code",
     },
     {
       title: "Action",
       key: "action",
       render: (_, record) => (
         <Space size="middle">
-          <a>Delete {record.name}</a>
+          <a>Delete</a>
           <a
             onClick={() => {
               showModal(true);
@@ -73,6 +60,7 @@ const Expances = () => {
           >
             View
           </a>
+          <a>Edit</a>
         </Space>
       ),
     },
@@ -80,15 +68,13 @@ const Expances = () => {
   const data = [
     {
       s_no: "1",
-      title: "RM2106097",
-      date: "2021-06-07",
-      pay_to: "Recam Solutions Pvt Ltd",
-      pay_for: "87320",
-      mode: "Kasinathan V",
-      amount: "Cash",
-      last_payment: "80000",
-      pending_payment: "7320 / 2021-07-05",
-      status: "Pending",
+      name: "vijay",
+      company_name: "riot",
+      contact_no: "9952996240",
+      gst_no: "1234567890",
+      mail_id: "Riot@gmail.com",
+      address: "Chennai",
+      postal_code: "600028",
     },
   ];
 
@@ -161,7 +147,7 @@ const Expances = () => {
 
   return (
     <div className="bodytable">
-      <h1 className="page-name">Expancess</h1>
+      <h1 className="page-name">Client</h1>
       {isModalOpen && (
         <Modal
           open={isModalOpen}
@@ -217,13 +203,9 @@ const Expances = () => {
           </div>
         </Modal>
       )}
-      <>
-        <Topbar />
-      </>
-
       <Table rowKey="s_no" columns={columns} dataSource={data} />
     </div>
   );
 };
 
-export default Expances;
+export default Client;

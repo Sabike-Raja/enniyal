@@ -1,0 +1,118 @@
+
+@font-face {
+    font-family: 'vijay-kumar';
+    src: url('../font/rioticons-Regular.woff2') format('woff2'),
+         url('../font/rioticons-regular-webfont.woff') format('woff');
+    
+    font-style: normal;
+}
+.riot-icon{
+    font-family: 'vijay-kumar';
+    font-weight: normal;
+    font-style: normal;
+}
+.riot-icon::before{
+    content: '\0045';
+}
+
+.riot-icon-dashboard::before{
+    content: '\0074';
+}
+
+.riot-icon-location::before{
+    content: '\2013';
+}
+
+.riot-icon-down::before{
+    content: '\0070';
+}
+
+.riot-icon-invoices::before{
+    content: '\0068';
+}
+
+.riot-icon-menu::before{
+    content: '\201D';
+}
+
+.riot-icon-employee::before{
+    content: '\0078';
+}
+
+.riot-icon-expencess::before{
+    content: '\0075';
+}
+
+.riot-icon-attantance::before{
+    content: '\0066';
+}
+
+.riot-icon-setting::before{
+    content: '\0077';
+}
+
+.riot-icon-logout:before{
+    content: '\0073';
+}
+
+.riot-icon-site::before{
+    content: '\0161';
+}
+
+.riot-icon-email::before{
+    content: '\0065';
+}
+
+.riot-icon-mobile::before{
+    content: '\2122';
+}
+
+.riot-icon-delete::before{
+    content: '\2019';
+}
+
+.riot-icon-view::before{
+    content: '\2018';
+}
+
+.riot-icon-pdf::before{
+    content: '\201E';
+}
+
+.riot-icon-edit::before{
+    content: '\0068';
+}
+
+.riot-icon-edit::before{
+    content: '\';
+}
+
+.riot-icon-whatsapp:before{
+    content: '\';
+}
+
+.riot-icon-snapchart:before{
+    content: '\';
+}
+
+.riot-icon-facebook:before{
+    content: '\';
+}
+
+.riot-icon-insta:before{
+    content: '\';
+}
+
+.riot-icon-cart:before{
+    content: '\';
+}
+
+.riot-icon-user:before{
+    content: '\';
+}
+
+.riot-icon-minimize::before{
+    content: '\';
+}
+
+

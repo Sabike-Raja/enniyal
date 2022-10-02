@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Space, Table } from "antd";
+import Button from "antd/lib/button";
 import { DatePicker } from "antd";
 import Modal from "antd/lib/modal";
-import "./expances.scss";
-import Topbar from "component/topbar";
 
-const Expances = () => {
+const ViewInvoice = () => {
   const columns = [
     {
       title: "S.no",
@@ -13,46 +12,42 @@ const Expances = () => {
       key: "s_no",
     },
     {
-      title: "Title/Invoice",
-      dataIndex: "title",
-      key: "title",
+      title: "Invoice No",
+      dataIndex: "invoice_no",
+      key: "invoice_no",
     },
     {
-      title: "Date",
-      dataIndex: "date",
-      key: "date",
+      title: "Created On",
+      dataIndex: "created_on",
+      key: "created_on",
     },
     {
-      title: "Pay To",
-      key: "pay_to",
-      dataIndex: "pay_to",
+      title: "Company Name",
+      key: "company_name",
+      dataIndex: "company_name",
     },
 
     {
-      title: "Pay For",
-      dataIndex: "pay_for",
-      key: "pay_for",
+      title: "Invoice Type",
+      dataIndex: "invoice_type",
+      key: "invoice_type",
     },
     {
-      title: "Mode",
-      dataIndex: "mode",
-      key: "mode",
+      title: "Payment Mode",
+      dataIndex: "payment_mode",
+      key: "payment_mode",
     },
     {
-      title: "Amount",
-      dataIndex: "amount",
-      key: "amount",
+      title: "Amt Recive/Date",
+      dataIndex: "amt_recive",
+      key: "amt_recive",
     },
     {
-      title: "Last Payment",
-      dataIndex: "last_payment",
-      key: "last_payment",
+      title: "Amt Pending/Date",
+      dataIndex: "amt_pending",
+      key: "amt_pending",
     },
-    {
-      title: "Pending Payment",
-      dataIndex: "pending_payment",
-      key: "pending_payment",
-    },
+
     {
       title: "Status",
       dataIndex: "status",
@@ -73,6 +68,8 @@ const Expances = () => {
           >
             View
           </a>
+          <a>Edit</a>
+          <a>Pdf</a>
         </Space>
       ),
     },
@@ -80,14 +77,13 @@ const Expances = () => {
   const data = [
     {
       s_no: "1",
-      title: "RM2106097",
-      date: "2021-06-07",
-      pay_to: "Recam Solutions Pvt Ltd",
-      pay_for: "87320",
-      mode: "Kasinathan V",
-      amount: "Cash",
-      last_payment: "80000",
-      pending_payment: "7320 / 2021-07-05",
+      invoice_no: "RM2106097",
+      created_on: "2021-06-07",
+      company_name: "Recam Solutions Pvt Ltd",
+      invoice_type: "Kasinathan V",
+      payment_mode: "87320",
+      amt_recive: "80000",
+      amt_pending: "7320 / 2021-07-05",
       status: "Pending",
     },
   ];
@@ -105,6 +101,7 @@ const Expances = () => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+  console.log(isModalOpen);
 
   const columnss = [
     {
@@ -161,7 +158,7 @@ const Expances = () => {
 
   return (
     <div className="bodytable">
-      <h1 className="page-name">Expancess</h1>
+      <h1 className="page-name">View Invoice</h1>
       {isModalOpen && (
         <Modal
           open={isModalOpen}
@@ -217,13 +214,9 @@ const Expances = () => {
           </div>
         </Modal>
       )}
-      <>
-        <Topbar />
-      </>
-
       <Table rowKey="s_no" columns={columns} dataSource={data} />
     </div>
   );
 };
 
-export default Expances;
+export default ViewInvoice;

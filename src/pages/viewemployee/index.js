@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Space, Table } from "antd";
+import Button from "antd/lib/button";
 import { DatePicker } from "antd";
 import Modal from "antd/lib/modal";
-import "./expances.scss";
-import Topbar from "component/topbar";
 
-const Expances = () => {
+const Viewemployee = () => {
   const columns = [
     {
       title: "S.no",
@@ -13,51 +12,41 @@ const Expances = () => {
       key: "s_no",
     },
     {
-      title: "Title/Invoice",
-      dataIndex: "title",
-      key: "title",
+      title: "Employee ID",
+      dataIndex: "employee_id",
+      key: "employee_id",
     },
     {
-      title: "Date",
-      dataIndex: "date",
-      key: "date",
+      title: "Designation",
+      dataIndex: "designation",
+      key: "designation",
     },
     {
-      title: "Pay To",
-      key: "pay_to",
-      dataIndex: "pay_to",
+      title: "Mobile No",
+      key: "mobile_no",
+      dataIndex: "mobile_no",
     },
 
     {
-      title: "Pay For",
-      dataIndex: "pay_for",
-      key: "pay_for",
+      title: "Mail ID",
+      dataIndex: "mail_id",
+      key: "mail_id",
     },
     {
-      title: "Mode",
-      dataIndex: "mode",
-      key: "mode",
+      title: "DOJ",
+      dataIndex: "doj",
+      key: "doj",
     },
     {
-      title: "Amount",
-      dataIndex: "amount",
-      key: "amount",
-    },
-    {
-      title: "Last Payment",
-      dataIndex: "last_payment",
-      key: "last_payment",
-    },
-    {
-      title: "Pending Payment",
-      dataIndex: "pending_payment",
-      key: "pending_payment",
+      title: "Pay Slip",
+      dataIndex: "pay_slip",
+      key: "pay_slip",
+      render: (text) => <a>{text}</a>,
     },
     {
       title: "Status",
       dataIndex: "status",
       key: "status",
-      render: (text) => <a>{text}</a>,
     },
     {
       title: "Action",
@@ -73,6 +62,7 @@ const Expances = () => {
           >
             View
           </a>
+          <a>Edit</a>
         </Space>
       ),
     },
@@ -80,14 +70,12 @@ const Expances = () => {
   const data = [
     {
       s_no: "1",
-      title: "RM2106097",
-      date: "2021-06-07",
-      pay_to: "Recam Solutions Pvt Ltd",
-      pay_for: "87320",
-      mode: "Kasinathan V",
-      amount: "Cash",
-      last_payment: "80000",
-      pending_payment: "7320 / 2021-07-05",
+      employee_id: "kumar",
+      designation: "KU 002",
+      mobile_no: "9952994260",
+      mail_id: "kumar@gmail.com",
+      doj: "01-04-2021",
+      pay_slip: "View",
       status: "Pending",
     },
   ];
@@ -105,6 +93,7 @@ const Expances = () => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+  console.log(isModalOpen);
 
   const columnss = [
     {
@@ -158,10 +147,9 @@ const Expances = () => {
   const onChange = (date, dateString) => {
     console.log(date, dateString);
   };
-
   return (
     <div className="bodytable">
-      <h1 className="page-name">Expancess</h1>
+      <h1 className="page-name">View Employee </h1>
       {isModalOpen && (
         <Modal
           open={isModalOpen}
@@ -217,13 +205,9 @@ const Expances = () => {
           </div>
         </Modal>
       )}
-      <>
-        <Topbar />
-      </>
-
       <Table rowKey="s_no" columns={columns} dataSource={data} />
     </div>
   );
 };
 
-export default Expances;
+export default Viewemployee;

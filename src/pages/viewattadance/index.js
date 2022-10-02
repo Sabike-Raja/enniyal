@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { Space, Table } from "antd";
+import { Space, Table, Row, Col } from "antd";
+import Button from "antd/lib/button";
 import { DatePicker } from "antd";
 import Modal from "antd/lib/modal";
-import "./expances.scss";
-import Topbar from "component/topbar";
+import "./style.scss";
+import moment from "moment";
 
-const Expances = () => {
+const dateFormatList = ["DD/MM/YYYY", "DD/MM/YY"];
+
+const ViewAttadance = () => {
   const columns = [
     {
       title: "S.no",
@@ -13,82 +16,112 @@ const Expances = () => {
       key: "s_no",
     },
     {
-      title: "Title/Invoice",
-      dataIndex: "title",
-      key: "title",
+      title: "Employee Name",
+      dataIndex: "employee_name",
+      key: "employee_name",
     },
     {
-      title: "Date",
-      dataIndex: "date",
-      key: "date",
+      title: "Employee ID",
+      dataIndex: "employee_id",
+      key: "employee_id",
     },
     {
-      title: "Pay To",
-      key: "pay_to",
-      dataIndex: "pay_to",
+      title: "Present/Total",
+      key: "present_total",
+      dataIndex: "present_total",
     },
 
     {
-      title: "Pay For",
-      dataIndex: "pay_for",
-      key: "pay_for",
-    },
-    {
-      title: "Mode",
-      dataIndex: "mode",
-      key: "mode",
-    },
-    {
-      title: "Amount",
-      dataIndex: "amount",
-      key: "amount",
-    },
-    {
-      title: "Last Payment",
-      dataIndex: "last_payment",
-      key: "last_payment",
-    },
-    {
-      title: "Pending Payment",
-      dataIndex: "pending_payment",
-      key: "pending_payment",
-    },
-    {
-      title: "Status",
-      dataIndex: "status",
-      key: "status",
-      render: (text) => <a>{text}</a>,
-    },
-    {
-      title: "Action",
-      key: "action",
-      render: (_, record) => (
-        <Space size="middle">
-          <a>Delete {record.name}</a>
-          <a
-            onClick={() => {
-              showModal(true);
-            }}
-            role="button"
-          >
-            View
-          </a>
-        </Space>
+      title: "Sunday",
+      dataIndex: "sunday",
+      key: "sunday",
+      render: (text) => (
+        <div>
+          <span className="holiday" />
+        </div>
       ),
     },
+    {
+      title: "Monday",
+      dataIndex: "monday",
+      key: "monday",
+      render: (text) => (
+        <div>
+          <span className="lop" />
+        </div>
+      ),
+    },
+    {
+      title: "Tuesday",
+      dataIndex: "tuesday",
+      key: "tuesday",
+      render: (text) => (
+        <div>
+          <span className="sick" />
+        </div>
+      ),
+    },
+    {
+      title: "Wednesday",
+      dataIndex: "wednesday",
+      key: "wednesday",
+      render: (text) => (
+        <div>
+          <span className="present" />
+        </div>
+      ),
+    },
+    {
+      title: "Thursday",
+      dataIndex: "thursday",
+      key: "thursday",
+      render: (text) => (
+        <div>
+          <span className="present" />
+        </div>
+      ),
+    },
+    {
+      title: "Friday",
+      dataIndex: "friday",
+      key: "friday",
+      render: (text) => (
+        <div>
+          <span className="present" />
+        </div>
+      ),
+    },
+    {
+      title: "Saturday",
+      dataIndex: "saturday",
+      key: "saturday",
+      render: (text) => (
+        <div>
+          <span className="sick" />
+        </div>
+      ),
+    },
+    // {
+    //   title: "Action",
+    //   key: "action",
+    //   render: (_, record) => (
+    //     <Space size="middle">
+    //       <a>Delete {record.name}</a>
+    //       <a onClick={() => {
+    //         showModal(true);
+    //       }}
+    //         role="button"
+    //       >View</a>
+    //     </Space>
+    //   ),
+    // },
   ];
   const data = [
     {
       s_no: "1",
-      title: "RM2106097",
-      date: "2021-06-07",
-      pay_to: "Recam Solutions Pvt Ltd",
-      pay_for: "87320",
-      mode: "Kasinathan V",
-      amount: "Cash",
-      last_payment: "80000",
-      pending_payment: "7320 / 2021-07-05",
-      status: "Pending",
+      employee_name: "kannan",
+      employee_id: "RE001",
+      present_total: "24/31",
     },
   ];
 
@@ -105,6 +138,7 @@ const Expances = () => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+  console.log(isModalOpen);
 
   const columnss = [
     {
@@ -158,10 +192,39 @@ const Expances = () => {
   const onChange = (date, dateString) => {
     console.log(date, dateString);
   };
-
   return (
     <div className="bodytable">
-      <h1 className="page-name">Expancess</h1>
+      <h1 className="page-name">View Attadance</h1>
+
+      <Row className="d-flex">
+        <Col className="align-item-center">
+          <DatePicker
+            defaultValue={moment("21/09/2022", dateFormatList[0])}
+            format={dateFormatList}
+          />
+          <Button>1st Week</Button>
+          <Button>2nd Week</Button>
+          <Button>3rd Week</Button>
+          <Button>4th Week</Button>
+          <Button>5th Week</Button>
+        </Col>
+      </Row>
+
+      <div className="d-flex">
+        <h3 style={{ marginRight: "30px" }}>
+          <span className="holiday"></span>Holiday
+        </h3>
+        <h3 style={{ marginRight: "30px" }}>
+          <span className="present"></span>Present
+        </h3>
+        <h3 style={{ marginRight: "30px" }}>
+          <span className="lop"></span>LOP
+        </h3>
+        <h3 style={{ marginRight: "30px" }}>
+          <span className="sick"></span>Sick Leave
+        </h3>
+      </div>
+
       {isModalOpen && (
         <Modal
           open={isModalOpen}
@@ -217,13 +280,9 @@ const Expances = () => {
           </div>
         </Modal>
       )}
-      <>
-        <Topbar />
-      </>
-
       <Table rowKey="s_no" columns={columns} dataSource={data} />
     </div>
   );
 };
 
-export default Expances;
+export default ViewAttadance;

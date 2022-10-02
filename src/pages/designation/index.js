@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Space, Table } from "antd";
+import Button from "antd/lib/button";
 import { DatePicker } from "antd";
 import Modal from "antd/lib/modal";
-import "./expances.scss";
-import Topbar from "component/topbar";
 
-const Expances = () => {
+const Designation = () => {
   const columns = [
     {
       title: "S.no",
@@ -13,66 +12,17 @@ const Expances = () => {
       key: "s_no",
     },
     {
-      title: "Title/Invoice",
-      dataIndex: "title",
-      key: "title",
-    },
-    {
-      title: "Date",
-      dataIndex: "date",
-      key: "date",
-    },
-    {
-      title: "Pay To",
-      key: "pay_to",
-      dataIndex: "pay_to",
+      title: "Designation",
+      dataIndex: "designation",
+      key: "designation",
     },
 
-    {
-      title: "Pay For",
-      dataIndex: "pay_for",
-      key: "pay_for",
-    },
-    {
-      title: "Mode",
-      dataIndex: "mode",
-      key: "mode",
-    },
-    {
-      title: "Amount",
-      dataIndex: "amount",
-      key: "amount",
-    },
-    {
-      title: "Last Payment",
-      dataIndex: "last_payment",
-      key: "last_payment",
-    },
-    {
-      title: "Pending Payment",
-      dataIndex: "pending_payment",
-      key: "pending_payment",
-    },
-    {
-      title: "Status",
-      dataIndex: "status",
-      key: "status",
-      render: (text) => <a>{text}</a>,
-    },
     {
       title: "Action",
       key: "action",
       render: (_, record) => (
         <Space size="middle">
           <a>Delete {record.name}</a>
-          <a
-            onClick={() => {
-              showModal(true);
-            }}
-            role="button"
-          >
-            View
-          </a>
         </Space>
       ),
     },
@@ -80,15 +30,7 @@ const Expances = () => {
   const data = [
     {
       s_no: "1",
-      title: "RM2106097",
-      date: "2021-06-07",
-      pay_to: "Recam Solutions Pvt Ltd",
-      pay_for: "87320",
-      mode: "Kasinathan V",
-      amount: "Cash",
-      last_payment: "80000",
-      pending_payment: "7320 / 2021-07-05",
-      status: "Pending",
+      designation: "Manager",
     },
   ];
 
@@ -105,6 +47,7 @@ const Expances = () => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+  console.log(isModalOpen);
 
   const columnss = [
     {
@@ -158,10 +101,9 @@ const Expances = () => {
   const onChange = (date, dateString) => {
     console.log(date, dateString);
   };
-
   return (
     <div className="bodytable">
-      <h1 className="page-name">Expancess</h1>
+      <h1 className="page-name">Designation</h1>
       {isModalOpen && (
         <Modal
           open={isModalOpen}
@@ -217,13 +159,9 @@ const Expances = () => {
           </div>
         </Modal>
       )}
-      <>
-        <Topbar />
-      </>
-
       <Table rowKey="s_no" columns={columns} dataSource={data} />
     </div>
   );
 };
 
-export default Expances;
+export default Designation;
