@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkenniyal_riot=self.webpackChunkenniyal_riot||[]).push([[596],{3596:function(e,n,a){a.r(n);var i=a(184);n.default=function(){return(0,i.jsx)("div",{className:"bodytable",children:(0,i.jsx)("h1",{className:"page-name",children:"View Proforma Invoice"})})}}}]);
+//# sourceMappingURL=596.1fc49f90.chunk.js.map

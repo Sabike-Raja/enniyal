@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkenniyal_riot=self.webpackChunkenniyal_riot||[]).push([[56],{8056:function(e,a,n){n.r(a);var s=n(184);a.default=function(){return(0,s.jsx)("div",{className:"bodytable",children:(0,s.jsx)("h1",{className:"page-name",children:"Dashboard"})})}}}]);
+//# sourceMappingURL=56.942a671d.chunk.js.map

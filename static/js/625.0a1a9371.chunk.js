@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkenniyal_riot=self.webpackChunkenniyal_riot||[]).push([[625],{7625:function(e,a,n){n.r(a);var i=n(184);a.default=function(){return(0,i.jsx)("div",{className:"bodytable",children:(0,i.jsx)("h1",{className:"page-name",children:"Create Pay Invoice"})})}}}]);
+//# sourceMappingURL=625.0a1a9371.chunk.js.map
